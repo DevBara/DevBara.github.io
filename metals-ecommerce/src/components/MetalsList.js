@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Container, Form, FormGroup, Input, Label,Table } from 'reactstrap';
+import {Card, CardImg,CardHeader, CardText, CardBody, CardTitle, CardSubtitle, Button,Row,Col} from 'reactstrap';
+import Sleekbeer from '../assets/Sleekbeer.jpg'
 
 
 export default class MetalsList extends Component {
@@ -25,7 +26,7 @@ export default class MetalsList extends Component {
         this.setState({
             isLoading:true});
 
-            fetch('/metals_api/v1/metals')
+            fetch('http://localhost:8090/metals_api/v1/metals')
                 .then(response => response.json())
                 .then(data => this.setState({
                     metals: data,
@@ -34,7 +35,7 @@ export default class MetalsList extends Component {
         }
 
         async remove(id) {
-            await fetch(`/metals_api/v1/metals${id}`, {
+            await fetch(`http://localhost:8090/metals_api/v1/metals${id}`, {
               method: 'DELETE',
               headers: {
                 'Accept': 'application/json',
@@ -58,36 +59,36 @@ export default class MetalsList extends Component {
 
             const metalsList=metals.map(metals => {
                 return <tr key ={metals.id}>
-                    <td>{metal.name}</td>
-                    <td>{metal.price}</td>
-                    <td>{metal.quantity}</td>
+                    <td>{metals.name}</td>
+                    <td>{metals.price}</td>
+                    <td>{metals.quantity}</td>
                
                     <td> 
-                        <Button onClick={() => this.add()}>Edit</Button>
-                        <Button onClick={() => this.remove(currency.id)}>Delete</Button>
+                        <Button>Edit</Button>
+                        <Button onClick={() => this.remove(metals.id)}>Delete</Button>
                     </td>
                 </tr>
             });
 
             return (
                 <div className="currencyTitle">
-                    <h2>Tracked Currencies</h2>
                 
                 <div className="trackerContainer">
-                    <Table>
-                        <thead>
-                        <tr>
-                            <th>Currency Name</th>
-                            <th>Currency Code</th>
-                            <th>Amount</th>
-                            <th>Exchange Rate</th>
-                            <th>Actions</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            {currencyList}
-                        </tbody>                               
-                    </Table>
+                <Row>
+                    <Col sm="6">
+                        <Card>
+                            <CardHeader>
+                                <CardTitle>Metal Name:</CardTitle>
+                                <CardSubtitle>Price</CardSubtitle>
+                            </CardHeader>
+                            <CardImg width="20%" height="20%" src={Sleekbeer}/>
+                            <CardBody >
+                                <CardText>.999 Fine gold</CardText>
+                                <Button>Add To Cart</Button>    
+                            </CardBody>                   
+                        </Card>
+                    </Col>
+                </Row>
                   
                   </div>
                 </div>
