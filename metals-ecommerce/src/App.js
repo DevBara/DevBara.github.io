@@ -1,25 +1,38 @@
 import React from 'react';
 import './App.css';
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
+import MetalsList from './components/MetalsList';
+import Home from './components/Home'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <header className="Header">
+      <Router>
+        <div>
+          <nav className="navBar">
+            <ul>
+              <li>
+                <Link className="link" to ="/home"> Home </Link>
+              </li>
+              <li>
+                <Link className="link" to ="/products">Tracked Currencies</Link>
+              </li>
+            </ul>
+          </nav>
+          <Switch>
+            <Route path="/home" exact ={true} component={Home} />
+            <Route path="/products" component={MetalsList} />
+          </Switch>
+        </div>
+      </Router>
+    </header>
+    
+    
+   </div>
+  )
+  
 }
+
 
 export default App;
