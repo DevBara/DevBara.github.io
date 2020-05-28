@@ -1,0 +1,27 @@
+.headerParent{
+    height: auto;
+    padding: 1em;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgb(150, 213, 238);
+
+  }
+  .headerTitle{
+    margin: 10px; 
+  }
+  .headerSubTitle{
+    margin: 0px;
+    padding: 0px;
+  }
+
+  li{
+    list-style-type: none;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+  }
+
+  .siteLogo{
+      width: 20%;
+      float: left;
+  }
