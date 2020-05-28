@@ -3,11 +3,13 @@ import './App.css';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 import MetalsList from './components/MetalsList';
 import Home from './components/Home'
+import Header from './components/Header'
 
 function App() {
   return (
     <div className="App">
     <header className="Header">
+    <Header />
       <Router>
         <div>
           <nav className="navBar">
