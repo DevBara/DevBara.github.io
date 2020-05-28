@@ -22,6 +22,9 @@
   }
 
   .siteLogo{
-      width: 20%;
-      float: left;
+    width: 10%;
+    height:10%;
+    float:left;
+    padding: 4px;
   }
+ 
