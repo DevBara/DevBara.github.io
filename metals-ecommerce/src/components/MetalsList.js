@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import {Card, CardImg,CardHeader, CardText, CardBody, CardTitle, CardSubtitle, Button,Row,Col} from 'reactstrap';
-import Sleekbeer from '../assets/Sleekbeer.jpg'
+import axios from 'axios'
+// import Sleekbeer from '../assets/Sleekbeer.jpg'
 
 
 export default class MetalsList extends Component {
@@ -12,6 +12,8 @@ export default class MetalsList extends Component {
             metals: [],
            
         };
+
+       
     }
     handleChange(event) {
         const target = event.target;
@@ -32,24 +34,11 @@ export default class MetalsList extends Component {
                     metals: data,
                     isLoading:false
             }))
+
         }
 
-        async remove(id) {
-            await fetch(`http://localhost:8090/metals_api/v1/metals${id}`, {
-              method: 'DELETE',
-              headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-              }
-            }).then(() => {
-              let updatedMetals= [...this.state.metals].filter(i => i.id !== id);
-              this.setState({metals: updatedMetals});
-            });
-          }
  
-          
-
-    
+        
         render() {
             const{metals,isLoading} = this.state;
 
@@ -61,36 +50,16 @@ export default class MetalsList extends Component {
                 return <tr key ={metals.id}>
                     <td>{metals.name}</td>
                     <td>{metals.price}</td>
-                    <td>{metals.quantity}</td>
-               
-                    <td> 
-                        <Button>Edit</Button>
-                        <Button onClick={() => this.remove(metals.id)}>Delete</Button>
-                    </td>
+                    <td>{metals.quantity}</td>               
+                    {/* <td> 
+                        <button onSubmit={this.submitHandler}>Delete</button>
+                    </td>  */}
                 </tr>
             });
 
             return (
                 <div className="currencyTitle">
-                
-                <div className="trackerContainer">
-                <Row>
-                    <Col sm="6">
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>Metal Name:</CardTitle>
-                                <CardSubtitle>Price</CardSubtitle>
-                            </CardHeader>
-                            <CardImg width="20%" height="20%" src={Sleekbeer}/>
-                            <CardBody >
-                                <CardText>.999 Fine gold</CardText>
-                                <Button>Add To Cart</Button>    
-                            </CardBody>                   
-                        </Card>
-                    </Col>
-                </Row>
-                  
-                  </div>
+                    {metalsList}
                 </div>
             )
         }  
