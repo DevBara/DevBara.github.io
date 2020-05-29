@@ -45,11 +45,10 @@ export default class UserReviews extends Component {
                 <h1 className="reviewsTitle"> Dont take our word for it, see what others have to say!</h1>
                 <h2 className="reviewsSubTitle">Customer Reviews</h2>
                 <div className="reviewsList">{reviewsList}</div>
-                <br></br>
-                <br></br>
-                <br></br>
+                <br />
+                <br />
+                <br />
                 
-
                 <div> 
                     <NavLink className="button" to="/leavereview">Leave a Review</NavLink>
                 </div>
