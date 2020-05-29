@@ -32,7 +32,7 @@ export default class SubmitReviewForm extends Component {
         return (
             <div>
                 <Form>
-                    <Form.Group controlId="exampleForm.ControlSelect1">
+                    <Form.Group className="ratingInput" controlId="exampleForm.ControlSelect1">
                         <Form.Label>Select Rating</Form.Label>
                         <Form.Control as="select">
                         <option></option>
