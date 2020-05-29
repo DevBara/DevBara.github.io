@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 // import Sleekbeer from '../assets/Sleekbeer.jpg'
+import AddMetals from './AddMetals'
 
 
 export default class MetalsList extends Component {
@@ -15,14 +15,6 @@ export default class MetalsList extends Component {
 
        
     }
-    handleChange(event) {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
-        let item = {...this.state.item};
-        item[name] = value;
-        this.setState({item});
-      }
 
     componentDidMount(){
         this.setState({
@@ -36,8 +28,6 @@ export default class MetalsList extends Component {
             }))
 
         }
-
- 
         
         render() {
             const{metals,isLoading} = this.state;
@@ -47,20 +37,22 @@ export default class MetalsList extends Component {
             }
 
             const metalsList=metals.map(metals => {
-                return <tr key ={metals.id}>
-                    <td>{metals.name}</td>
-                    <td>{metals.price}</td>
-                    <td>{metals.quantity}</td>               
-                    {/* <td> 
-                        <button onSubmit={this.submitHandler}>Delete</button>
-                    </td>  */}
-                </tr>
+                return <div key ={metals.id}>
+                    <h1>{metals.name}</h1>
+                    <h3>${metals.price}</h3>
+                    <h3>Quantity
+                        <select>{metals.quantity}</select>
+                    </h3>
+                    <button>Add to Cart</button>               
+                </div>
             });
 
             return (
                 <div className="currencyTitle">
                     {metalsList}
+                    <AddMetals />
                 </div>
+                
             )
         }  
     }

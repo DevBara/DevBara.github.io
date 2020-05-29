@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 import MetalsList from './components/MetalsList';
 import Home from './components/Home'
 import Header from './components/Header'
-import AddMetals from './components/AddMetals';
+import UserReviews from './components/UserReviews';
 
 function App() {
   return (
@@ -21,16 +21,19 @@ function App() {
               <li>
                 <Link className="link" to ="/products">Purchase Metals</Link>
               </li>
+              <li>
+                <Link className="link" to ="/reviews">Reviews</Link>
+              </li>
             </ul>
           </nav>
           <Switch>
             <Route path="/home" exact ={true} component={Home} />
             <Route path="/products" component={MetalsList} />
+            <Route path="/reviews" component={UserReviews} />
           </Switch>
         </div>
       </Router>
     </header>
-    <AddMetals />
     
     
    </div>
