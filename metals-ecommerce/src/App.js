@@ -6,12 +6,18 @@ import Home from './components/Home'
 import Header from './components/Header'
 import UserReviews from './components/UserReviews';
 import SubmitReviewForm from './components/SubmitReviewForm';
+import Cart from './components/Cart';
+import MetalPriceApi from './components/MetalPriceApi';
+
+
+
 
 function App() {
   return (
     <div className="App">
     <header className="Header">
     <Header />
+    <MetalPriceApi />
       <Router>
         <div>
           <nav className="navBar">
@@ -25,13 +31,17 @@ function App() {
               <li>
                 <Link className="link" to ="/reviews">Reviews</Link>
               </li>
+              <li>
+                <Link className="cart" to ="/mycart" >My Cart </Link>
+              </li>
             </ul>
           </nav>
           <Switch>
             <Route path="/home" exact ={true} component={Home} />
             <Route path="/products" component={MetalsList} />
             <Route path="/reviews" component={UserReviews} />
-            <Route path="/leavereview" component={SubmitReviewForm} />
+            <Route path="/leaveareview" component={SubmitReviewForm} />
+            <Route path="mycart" component={Cart} />
           </Switch>
         </div>
       </Router>
