@@ -5,6 +5,7 @@ import MetalsList from './components/MetalsList';
 import Home from './components/Home'
 import Header from './components/Header'
 import UserReviews from './components/UserReviews';
+import SubmitReviewForm from './components/SubmitReviewForm';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/home" exact ={true} component={Home} />
             <Route path="/products" component={MetalsList} />
             <Route path="/reviews" component={UserReviews} />
+            <Route path="/leavereview" component={SubmitReviewForm} />
           </Switch>
         </div>
       </Router>
