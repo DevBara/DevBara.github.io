@@ -28,3 +28,19 @@
     padding: 4px;
   }
  
+
+  .reviewsTitle{
+    text-align: center;
+  }
+
+  .reviewsSubTitle{
+    text-align: center;
+  }
+
+  .reviewsList{
+    text-align: center;
+  }
+
+  .ratingInput{
+    text-align: center;
+  }
