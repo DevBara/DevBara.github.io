@@ -25,7 +25,9 @@ export default class MetalsList extends Component {
                 .then(data => this.setState({
                     metals: data,
                     isLoading:false
+
             }))
+
 
         }
         
