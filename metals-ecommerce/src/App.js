@@ -10,7 +10,7 @@ import Cart from './components/Cart';
 import MetalPriceApi from './components/MetalPriceApi';
 
 
-
+console.log(process.env.REACT_APP_METALS)
 
 function App() {
   return (

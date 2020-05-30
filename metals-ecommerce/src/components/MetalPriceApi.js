@@ -7,7 +7,7 @@ export default class MetalPriceApi extends Component {
         super(props);
 
         this.state ={
-           prices: [],
+           prices: '',
            
         };
 
@@ -15,9 +15,9 @@ export default class MetalPriceApi extends Component {
     }
 
     componentDidMount(){
-        const Metals_Api= process.env.REACT_APP_METALS_API
+      
 
-            fetch(`https://metals-api.com/api/latest?access_key=${Metals_Api}&base=USD&symbols=XAU,XAG,XPD,XPT,XRH`)
+            fetch(`https://metals-api.com/api/latest?access_key=${process.env.REACT_APP_METALS}&base=USD&symbols=XAU,XAG,XPD,XPT,XRH`)
                 .then(response => response.json())
                 .then(data => this.setState({
                     prices: data
@@ -30,8 +30,8 @@ export default class MetalPriceApi extends Component {
             const{prices} = this.state;
 
             const priceTicker=prices.map(prices => {
-                return <div key ={prices.id}>
-                   <div>{prices.USD}</div>          
+                return <div key ={prices.rates}>
+                   <div>{prices.rates}</div>          
                 </div>
             });
 

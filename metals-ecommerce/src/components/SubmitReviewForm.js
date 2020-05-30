@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Form,Label,Control,Group}from 'react-bootstrap'
+import {Form}from 'react-bootstrap'
 import axios from 'axios'
 
  
