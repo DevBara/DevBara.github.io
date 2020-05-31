@@ -130,11 +130,25 @@ h3 {
   width: 100%;
 }
 
-/* .each-fade h2 {
-  width: 25%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  background: #adceed;
-} */
+/* End Slide Show Styling */
+
+/* Home Page Top Picks */
+.homeTop{
+  width: 100%;
+}
+
+.cardHome{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  /* margin: auto; */
+  margin-left: 20px;
+  text-align: center;
+  font-family: arial;
+  display:inline-block;
+  padding: 30px;
+
+}
+
+.topTitle{
+  text-align: center;
+}
