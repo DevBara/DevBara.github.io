@@ -11,6 +11,7 @@ export default class Header extends Component {
                 </div>
                 <h1 className="headerTitle">PM Exchange</h1>
                 <p className="headerSubTitle">Assets you can hold!</p>
+                
             </div>
         )
     }
