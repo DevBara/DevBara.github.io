@@ -67,9 +67,3 @@ class AddMetals extends Component {
 	}
 }
 export default AddMetals;
-
-
-
-// name
-// price
-// quantity
