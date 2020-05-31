@@ -34,7 +34,7 @@ export default class UserReviews extends Component {
 
         const reviewsList=reviews.map(reviews => {
             return <div key={reviews.id}>
-                <h4>Rating is:{reviews.rating} out of 5 stars</h4>
+                <h4>Rated {reviews.rating} out of 5 stars</h4>
                 <div>{reviews.comments}</div>            
             </div>
 

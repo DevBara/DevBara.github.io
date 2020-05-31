@@ -25,6 +25,7 @@ export default class Cart extends Component {
     render() {
         return (
             <div>
+                {this.props.children}
                 
             </div>
         )
