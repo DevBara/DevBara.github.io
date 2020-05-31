@@ -1,42 +1,50 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Slide } from 'react-slideshow-image';
 
-export default class Home extends Component {
-    render() {
-        return (
-            <div>
-                <div>
-                    <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
-                        {/* <img src="img1.jpg" style="width:100%" /> */}
-                        <div class="text">Caption Text</div>
-                    </div>
+import ImgOne from '../assets/ImgOne.png'
+import ImgTwo from '../assets/ImgTwo.png'
+import ImgThree from '../assets/ImgThree.jpg'
 
-                <div class="mySlides fade">
-                    <div class="numbertext">2 / 3</div>
-                    {/* <img src="img2.jpg" style="width:100%" /> */}
-                    <div class="text">Caption Two</div>
-                </div>
+const slideImages = [
+    ImgOne,
+    ImgTwo,
+    ImgThree
+  ];
+   
+  const properties = {
+    duration: 4000,
+    transitionDuration: 400,
+    infinite: true,
+    indicators: true,
+    arrows: true,
+    pauseOnHover: true,
+  
+  }
 
-                <div class="mySlides fade">
-                    <div class="numbertext">3 / 3</div>
-                    {/* <img src="img3.jpg" style="width:100%" /> */}
-                    <div class="text">Caption Three</div>
-                </div>
-                    <a class="prev" onclick="plusSlides(-1)">&#10094></a>
-                    <a class="next" onclick="plusSlides(1)">&#10095></a>
-                </div>
-                <br></br>
-
-
-                <div >
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                </div>
+export default function Home() {
+    return (  
+        <div className="slide-container" id="slide-box">
+          <Slide {...properties}>
+  
+            <div className="slides">
+              <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
+                <span>Precious Metals is only a click away</span>
+              </div>
             </div>
-                
-            
-        )
-    }
-}
-
+  
+            <div className="slides">
+              <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
+                <span>Assets you can hold!</span>
+              </div>
+            </div>
+  
+            <div className="slides">
+              <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
+                <span>Free Shipping on Orders over $50</span>
+              </div>
+            </div>
+          </Slide>
+          <h1>Precious Metals Top Picks</h1>
+        </div>
+      )
+  }
