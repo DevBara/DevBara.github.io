@@ -17,9 +17,8 @@ class AddMetals extends Component {
     }
 
     submitHandler = e => {
-        e.preventDefault()
-        console.log(this.state);
-
+       
+       
         axios.post('metals_api/v1/metals',
             this.state)
             .then(response => {
@@ -30,21 +29,6 @@ class AddMetals extends Component {
             })
         
     }
-
-    // deleteHandler = e =>{
-    //     e.preventDefault()
-    //     console.log(this.state)
-
-    //     axios.delete('metals_api/v1/metals', this.state)
-    //         .then(response =>{
-    //             console.log(response);
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         })
-    //     }
-   
-
 
 
     render() {
@@ -77,7 +61,6 @@ class AddMetals extends Component {
 						/>
 					</div>
 					<button type="submit">Add Metal</button>
-                    {/* <button type="submit" onClick={this.deleteHandler}>Delete Metal</button> */}
 				</form>
 			</div>
 		)

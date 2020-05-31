@@ -5,7 +5,7 @@ export default class dNews extends Component {
     constructor(props) {
         super(props);
         
-        let array = new Array(14);
+        let array = new Array(20);
         let NewsObject = {
           webTitle:'',
           description:'',
@@ -30,7 +30,7 @@ export default class dNews extends Component {
               let newsArray=[];
               let newNewsObject;
  
-              for(let i =0;i<14;i++){
+              for(let i =0;i<20;i++){
                 newNewsObject = {
                   title:result.articles[i].title,
                   description:result.articles[i].description,

@@ -40,12 +40,20 @@ export default class MetalsList extends Component {
 
             const metalsList=metals.map(metals => {
                 return <div key ={metals.id}>
+                <div className="card">
+                
                     <h1>{metals.name}</h1>
-                    <h3>${metals.price}</h3>
-                    <h3>Quantity
-                        <select>{metals.quantity}</select>
-                    </h3>
-                    <button>Add to Cart</button>               
+                    <p className="price">${metals.price}</p>
+                    <p>Quantity
+                        <select>{metals.quantity}
+                            <option>-</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </p>
+                    <p><button>Add to Cart</button></p>
+                </div>              
                 </div>
             });
 

@@ -1,44 +1,46 @@
-// import React, { Component } from 'react'
-// import axios from 'axios'
+import React, { Component } from 'react'
+import axios from 'axios'
 
-// export default class MetalPriceApi extends Component {
-//     constructor(props){
-//         super(props);
+export default class MetalPriceApi extends Component {
+    constructor(props){
+        super(props);
 
-//         this.state={
-//             ratesList: []
-//         }
-//     }
-
-
-//     componentDidMount(){
-//         axios.get('https://metals-api.com/api/latest?access_key=dmq34ceggue0sri34iokre5rxcppv5s9e983jn98ivi5jfg545asqtegn5r0&base=USD&symbols=XAU,XAG,XPD,XPT,XRH')
-//         .then(res => {
-//             const tickers=res.data.rates;
-//             console.log(tickers)
-
-//             this.setState({
-//                 ratesList:res.data.rates
-//             });
-//         });
-//     }
+        this.state={
+            ratesList: ''
+        }
+    }
 
 
-//     render() {
+    componentDidMount(){
+        axios.get('https://metals-api.com/api/latest?access_key=ur9qbagkj269riclrh2pn8d78y6ry5t5254mbst77vbi92nbkis6tenfu9t1&base=USD&symbols=XAU,XAG,XPD,XPT,XRH')
+        .then(res => {
+            this.setState({
+                ratesList:res.data.rates
+            });
+            
+        });
+    }
 
-//         const{ratesList} = this.state;
+    
 
-//         const rates = ratesList.map(ratesList => {
-//             return <div key ={ratesList}>
-//                 <h1>{ratesList}</h1>
-//             </div>
-//         })
 
-//         return (
-//             <div>
-//                 {rates}
-                
-//             </div>
-//         )
-//     }
-// }
+    render() {
+        
+        if(this.state.ratesList === undefined || this.state.ratesList === []){
+            
+            return <div></div>
+            
+        }
+        
+
+        return (
+            <div>
+                <div>
+                    {Object.values(this.state.ratesList).map(key => (
+                        <li key={key}>{[key].data}</li>
+                    ))}
+                </div>
+            </div>
+        )
+    }
+}

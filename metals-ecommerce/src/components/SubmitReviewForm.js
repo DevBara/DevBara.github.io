@@ -31,41 +31,23 @@ export default class SubmitReviewForm extends Component {
         
     }
 
-    async componentDidMount() {
-        if (this.props.match.params.id !== 'new') {
-          const group = await (await fetch(`/metals_api/v1/reviews/${this.props.match.params.id}`)).json();
-          this.setState({item: group});
-        }
-      }
+ deleteHandler = e => {
+     window.alert('Review has been deleted')
 
-    async remove(id) {
-        await fetch(`/metals_api/v1/reviews`, {
-          method: 'DELETE',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          }
-        }).then(() => {
-          let updatedReviews = [...this.state.reviews].filter(i => i.id !== id);
-          this.setState({currencies: updatedReviews});
-        });
-      }
-
-    // deleteHandler = e =>{
-    //     e.preventDefault()
-    //     console.log(this.state)
-
-    //     axios.delete(`metals_api/v1/reviews/${id}`, this.state)
-    //         .then(response =>{
-    //             console.log(response);
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         })
-    //     }
+     axios.delete('metals_api/v1/reviews',
+        this.state)
+        .then(response => {
+            console.log(response)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+ }
+    
     render() {
 
         const{comments, rating} = this.state
+
         return (
         <div>
                 <form onSubmit={this.submitHandler}> 
@@ -89,7 +71,10 @@ export default class SubmitReviewForm extends Component {
                     >
                     </textarea>
                     <button type="submit">Submit Review</button>
-                    <button type="button" onClick={() => this.remove()}>Remove Review</button>
+                    <div onSubmit={this.deleteHandler}>
+                        <button type="button" onChange={this.changeHandler}>Remove Review</button>
+                    </div>
+                    
                 </form>
             </div>
         )

@@ -8,9 +8,8 @@ import UserReviews from './components/UserReviews';
 import SubmitReviewForm from './components/SubmitReviewForm';
 import Cart from './components/Cart';
 import MetalPriceApi from './components/MetalPriceApi';
+import News from './components/News';
 
-
-console.log(process.env.REACT_APP_METALS)
 
 function App() {
   return (
@@ -34,18 +33,23 @@ function App() {
               <li>
                 <Link className="cart" to ="/mycart" >My Cart </Link>
               </li>
+              <li>
+                <Link className="link" to ="/latestnews" >News </Link>
+              </li>
             </ul>
           </nav>
           <Switch>
             <Route path="/home" exact ={true} component={Home} />
             <Route path="/products" component={MetalsList} />
             <Route path="/reviews" component={UserReviews} />
-            <Route path="/leaveareview" component={SubmitReviewForm} />
+            <Route path="/leavereview" component={SubmitReviewForm} />
             <Route path="mycart" component={Cart} />
+            <Route path="/latestnews" component={News} />
           </Switch>
         </div>
       </Router>
     </header>
+   
     
     
    </div>
