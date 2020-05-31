@@ -31,7 +31,7 @@ function App() {
                 <Link className="link" to ="/reviews">Reviews</Link>
               </li>
               <li>
-                <Link className="cart" to ="/mycart" >My Cart </Link>
+                <Link className="cart" to ="/cart" >My Cart </Link>
               </li>
               <li>
                 <Link className="link" to ="/latestnews" >News </Link>
@@ -48,6 +48,7 @@ function App() {
           </Switch>
         </div>
       </Router>
+      <Cart />
     </header>
    
     
