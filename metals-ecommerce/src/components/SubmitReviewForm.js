@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Form}from 'react-bootstrap'
+import {Form, Button}from 'react-bootstrap'
 import axios from 'axios'
 
  
@@ -8,15 +8,17 @@ export default class SubmitReviewForm extends Component {
         super(props);
 
         this.state={
-            reviews: [],
+            comments: [],
             ratings: []
         }
     }
 
+    changeHandler = e => {
+        this.setState({[e.target.name]: e.target.value})
+    }
 
     submitHandler = e => {
         e.preventDefault()
-        console.log(this.state);
 
         axios.post('metals_api/v1/metals/reviews',
             this.state)
@@ -29,25 +31,23 @@ export default class SubmitReviewForm extends Component {
         
     }
     render() {
+
+        const{comments, ratings} = this.state
         return (
             <div>
-                <Form>
-                    <Form.Group className="ratingInput" controlId="exampleForm.ControlSelect1">
-                        <Form.Label>Select Rating</Form.Label>
-                        <Form.Control as="select">
-                        <option></option>
-                        <option>1 star</option>
-                        <option>2 stars</option>
-                        <option>3 stars</option>
-                        <option>4 stars</option>
-                        <option>5 stars</option>
-                        </Form.Control>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Leave a Review:</Form.Label>
-                        <Form.Control as="textarea" rows="9" />
-                    </Form.Group>
-                </Form>
+                <form>
+                    <div>
+                        <p>Select Rating</p>
+                        <select>
+                        <option value="0">-</option>
+                            <option value="1">1 star</option>
+                            <option value="2">2 stars</option>
+                            <option value="3">3 stars</option>
+                            <option value="4">4 stars</option>
+                        </select>
+                    </div>
+                    <textarea rows="9" cols="70" placeholder="Type Review Here..."></textarea>
+                </form>
             </div>
         )
     }
