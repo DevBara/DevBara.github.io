@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+
 export default class MetalPriceApi extends Component {
     constructor(props){
         super(props);
@@ -12,7 +13,7 @@ export default class MetalPriceApi extends Component {
 
 
     componentDidMount(){
-        axios.get('https://metals-api.com/api/latest?access_key=ur9qbagkj269riclrh2pn8d78y6ry5t5254mbst77vbi92nbkis6tenfu9t1&base=USD&symbols=XAU,XAG,XPD,XPT,XRH')
+        axios.get('https://gold-price-live.p.rapidapi.com/get_metal_prices')
         .then(res => {
             this.setState({
                 ratesList:res.data.rates
@@ -20,9 +21,6 @@ export default class MetalPriceApi extends Component {
             
         });
     }
-
-    
-
 
     render() {
         
@@ -34,11 +32,18 @@ export default class MetalPriceApi extends Component {
         
 
         return (
-            <div>
+            <div className="metalPrices">
                 <div>
-                    {Object.values(this.state.ratesList).map(key => (
-                        <li key={key}>{[key].data}</li>
-                    ))}
+                    <iframe src="https://www.goldbroker.com/widget/live-price/XAU?currency=USD"></iframe>
+                </div>
+                <div>
+                    <iframe src="https://www.goldbroker.com/widget/live-price/XAG?currency=USD"></iframe>
+                </div>
+                <div>
+                    <iframe src="https://www.goldbroker.com/widget/live-price/XPD?currency=USD"></iframe>
+                </div>
+                <div>
+                    <iframe src="https://www.goldbroker.com/widget/live-price/XPT?currency=USD"></iframe>
                 </div>
             </div>
         )

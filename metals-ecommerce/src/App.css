@@ -1,13 +1,15 @@
+/* Header Styling */
 .headerParent{
     height: auto;
     padding: 1em;
     font-size: 20px;
     text-align: center;
-    background-color: rgb(150, 213, 238);
+    background-color: lightgray;
+    
 
   }
   .headerTitle{
-    margin: 10px; 
+    margin: 0px; 
   }
   .headerSubTitle{
     margin: 0px;
@@ -18,7 +20,14 @@
     list-style-type: none;
     display: inline-block;
     margin: 10px;
+  }
+
+  .navBar{
     text-align: center;
+    background-color: rgba(211, 211, 211, 0.521);
+    font-size: 20px;
+    padding: 0px;
+    margin: 0;
   }
 
   .siteLogo{
@@ -27,8 +36,10 @@
     float:left;
     padding: 4px;
   }
- 
+  /* End Header Styling */
 
+ 
+/* Review Page Styling */
   .reviewsTitle{
     text-align: center;
   }
@@ -44,6 +55,8 @@
   .ratingInput{
     text-align: center;
   }
+
+  /* End Review Page Styling */
 
   /* Product Card */
 
@@ -90,9 +103,7 @@
   /* End Home Styling */
 
 
-
-
-/* SLideshow Styling */
+/* Slideshow Styling */
 .slide-container {
   width: 90%;
   margin: auto; }
@@ -194,7 +205,20 @@ h3 {
 
 .newsTitle{
   font-size: 25px;
-  background-color:  rgba(150, 213, 238, 0.349)
+  background-color: rgb(150, 213, 238)
 }
 
 /* End News Styling */
+
+/* API price styling */
+.metalPrices{
+  display: flex;
+  flex-direction: row;
+  background-color:rgb(238, 234, 16)
+}
+
+iframe{
+  text-align: center;
+  height: 88px;
+  width: 355px;
+}

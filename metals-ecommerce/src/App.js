@@ -15,12 +15,12 @@ function App() {
   return (
     <div className="App">
     <header className="Header">
-    <Header />
     <MetalPriceApi />
+    <Header />
       <Router>
         <div>
-          <nav className="navBar">
-            <ul>
+          <nav>
+            <ul className="navBar">
               <li>
                 <Link className="link" to ="/home"> Home </Link>
               </li>
@@ -31,10 +31,10 @@ function App() {
                 <Link className="link" to ="/reviews">Reviews</Link>
               </li>
               <li>
-                <Link className="cart" to ="/cart" >My Cart </Link>
+                <Link className="link" to ="/latestnews" >News </Link>
               </li>
               <li>
-                <Link className="link" to ="/latestnews" >News </Link>
+                <Link className="cart" to ="/cart" >My Cart </Link>
               </li>
             </ul>
           </nav>
@@ -43,8 +43,8 @@ function App() {
             <Route path="/products" component={MetalsList} />
             <Route path="/reviews" component={UserReviews} />
             <Route path="/leavereview" component={SubmitReviewForm} />
-            <Route path="mycart" component={Cart} />
             <Route path="/latestnews" component={News} />
+            <Route path="cart" component={Cart} />
           </Switch>
         </div>
       </Router>

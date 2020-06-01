@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Form, Button}from 'react-bootstrap'
+import {Button}from 'react-bootstrap'
 import axios from 'axios'
 
  
@@ -70,7 +70,7 @@ export default class SubmitReviewForm extends Component {
                         name="comments"
                     >
                     </textarea>
-                    <button type="submit">Submit Review</button>
+                    <Button type="submit">Submit Review</Button>
                     <div onSubmit={this.deleteHandler}>
                         <button type="button" onChange={this.changeHandler}>Remove Review</button>
                     </div>

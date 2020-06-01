@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import Sleekbeer from '../assets/Sleekbeer.jpg'
 import AddMetals from './AddMetals'
+import Cart from './Cart'
 
 
 export default class MetalsList extends Component {
@@ -24,7 +25,8 @@ export default class MetalsList extends Component {
                 .then(response => response.json())
                 .then(data => this.setState({
                     metals: data,
-                    isLoading:false
+                    isLoading:false,
+                    price: data
 
             }))
 
@@ -53,7 +55,8 @@ export default class MetalsList extends Component {
                         </select>
                     </p>
                     <p><button>Add to Cart</button></p>
-                </div>              
+                </div>            
+                
                 </div>
             });
 
