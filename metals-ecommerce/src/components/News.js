@@ -21,7 +21,7 @@ export default class dNews extends Component {
     
       componentDidMount() {
 
-        fetch(`https://newsapi.org/v2/everything?q=forex&apiKey=264e4eef82914a3984c95d7c0d8637a1`)
+        fetch(`https://newsapi.org/v2/everything?q=kitco&apiKey=264e4eef82914a3984c95d7c0d8637a1`)
           .then(response => response.json()) 
           .then(
             result => {
@@ -53,7 +53,7 @@ export default class dNews extends Component {
 
       render() {
         return (
-          <div>
+          <div className="cardNews">
             <div className="">
             <div className="row">
             <ul>
@@ -61,7 +61,7 @@ export default class dNews extends Component {
               <br></br>
               <img src ={this.state.data[0].urlToImage} width="40%"/>
               <br></br>
-              <li>{this.state.data[0].url}</li>
+              <li><a href={this.state.data[0].url} target="_blank">Read More</a></li>
             </ul>
           </div>
           <div className="row">
@@ -70,7 +70,7 @@ export default class dNews extends Component {
               <br></br>
               <img src ={this.state.data[1].urlToImage} width="40%"/>
               <br></br>
-              <li>href=`{this.state.data[1].url}`</li>
+              <li><a href={this.state.data[1].url} target="_blank">Read More</a></li>
             </ul>
           </div>
           <div className="row">
@@ -79,7 +79,7 @@ export default class dNews extends Component {
               <br></br>
               <img src ={this.state.data[2].urlToImage} width="40%"/>
               <br></br>
-              <li>{this.state.data[2].url}</li>
+              <li><a href={this.state.data[2].url} target="_blank">Read More</a></li>
             </ul>
           </div>
           <div className="row">
@@ -88,7 +88,7 @@ export default class dNews extends Component {
               <br></br>
               <img src ={this.state.data[3].urlToImage} width="40%"/>
               <br></br>
-              <li>{this.state.data[3].url}</li>
+              <li><a href={this.state.data[3].url} target="_blank">Read More</a></li>
             </ul>
           </div>
           <div className="row">
@@ -97,7 +97,7 @@ export default class dNews extends Component {
               <br></br>
               <img src ={this.state.data[4].urlToImage} width="40%"/>
               <br></br>
-              <li>{this.state.data[4].url}</li>
+              <li><a href={this.state.data[4].url} target="_blank">ReadMore</a></li>
             </ul>
           </div>
           <div className="row">
@@ -106,7 +106,7 @@ export default class dNews extends Component {
               <br></br>
               <img src ={this.state.data[5].urlToImage} width="40%"/>
               <br></br>  
-              <li>{this.state.data[5].url}</li>
+              <li><a href={this.state.data[5].url} target="_blank">Read More</a></li>
             </ul>
           </div>
           <div className="row">
@@ -115,7 +115,7 @@ export default class dNews extends Component {
               <br></br>
               <img src ={this.state.data[6].urlToImage} width="40%"/>
               <br></br>
-              <li>{this.state.data[6].url}</li>
+              <li><a href={this.state.data[6].url} target="_blank">Read More</a></li>
             </ul>
           </div>
           <div className="row">
@@ -124,7 +124,7 @@ export default class dNews extends Component {
               <br></br>
               <img src ={this.state.data[7].urlToImage} width="40%"/>
               <br></br>
-              <li>{this.state.data[7].url}</li>
+              <li><a href={this.state.data[7].url} target="_blank">Read More</a></li>
             </ul>
           </div>
           <div className="row">
@@ -133,7 +133,7 @@ export default class dNews extends Component {
               <br></br>
               <img src ={this.state.data[8].urlToImage} width="40%"/>
               <br></br>
-              <li>{this.state.data[8].url}</li>
+              <li><a href={this.state.data[8].url} target="_blank">Read More</a></li>
             </ul>
           </div>
           <div className="row">
@@ -142,7 +142,7 @@ export default class dNews extends Component {
               <br></br>
               <img src ={this.state.data[9].urlToImage} width="40%"/>
               <br></br>
-              <li>{this.state.data[9].url}</li>
+              <li><a href={this.state.data[9].url} target="_blank">Read More</a></li>
             </ul>
           </div>
           <div className="row">
@@ -151,30 +151,11 @@ export default class dNews extends Component {
               <br></br>
               <img src ={this.state.data[10].urlToImage} width="40%"/>
               <br></br>
-              <li>{this.state.data[10].url}</li>
+              <li><a href={this.state.data[10].url} target="_blank">Read More</a></li>
             </ul>
           </div>
-          <div className="row">
-            <ul>
-              <li className="newsTitle">{this.state.data[11].title}</li>
-              <br></br>
-              <img src ={this.state.data[11].urlToImage} width="40%"/>
-              <br></br>
-              <li>{this.state.data[11].url}</li>
-            </ul>
+          
           </div>
-          <div className="row">
-            <ul>
-              <li className="newsTitle">{this.state.data[12].title}</li>
-              <br></br>
-              <img src ={this.state.data[12].urlToImage} width="40%"/>
-              <br></br>
-              <li>{this.state.data[12].url}</li>
-            </ul>
-          </div>
-            </div>
-           
-
           </div>
         )
       }
