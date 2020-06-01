@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {NavLink} from 'react-router-dom'
+import axios from 'axios'
 
 
 export default class UserReviews extends Component {
@@ -8,7 +10,8 @@ export default class UserReviews extends Component {
         this.state={
             comments: '',
             ratings:[],
-            reviews:[]
+            reviews:[],
+            id: 0
         }
     }
 
@@ -24,6 +27,27 @@ export default class UserReviews extends Component {
             }))
 
         }
+handleChange= event => {
+    this.setState({comments: event.target.value})
+}
+    
+handleSubmit =event =>{
+    event.preventDefault();
+
+    const reviews ={
+        comments:this.state.comments
+    }
+
+    axios
+        .delete(`http://localhost:8090/metals_api/v1/reviews/${this.state.id}`,{reviews})
+        .then(response => {
+            console.log(response);
+            console.log(response.data)
+
+        })
+        
+}
+
 
  
 
@@ -39,33 +63,36 @@ export default class UserReviews extends Component {
         });
         
         return (
-            <div className="reviewContainer">
-                <div className="cardReview" id="reviewsList" >
-                    <div className="reviewsList">{reviewsList[0]}</div>
+            <div>
+                <div> 
+                    <NavLink className="button" to="/leavereview">Leave a Review</NavLink>
                 </div>
-                <div className="cardReview" >
-                    <div className="reviewsList">{reviewsList[1]}</div>
-                </div>
-                <div className="cardReview" >
-                    <div className="reviewsList">{reviewsList[2]}</div>
-                </div>
-                <div className="cardReview" >
-                    <div className="reviewsList">{reviewsList[3]}</div>
-                </div>
-                <div className="cardReview" >
-                    <div className="reviewsList">{reviewsList[4]}</div>
-                </div>
-                <div className="cardReview" >
-                    <div className="reviewsList">{reviewsList[5]}</div>
-                </div>
-                <div className="cardReview" >
-                    <div className="reviewsList">{reviewsList[6]}</div>
+                <div className="reviewContainer">
+                    <div className="cardReview" id="reviewsList" >
+                        <div className="reviewsList">{reviewsList[0]}</div>
+                    </div>
+                    <div className="cardReview" >
+                        <div className="reviewsList">{reviewsList[1]}</div>
+                    </div>
+                    <div className="cardReview" >
+                        <div className="reviewsList">{reviewsList[2]}</div>
+                    </div>
+                    <div className="cardReview" >
+                        <div className="reviewsList">{reviewsList[3]}</div>
+                    </div>
+                    <div className="cardReview" >
+                        <div className="reviewsList">{reviewsList[4]}</div>
+                    </div>
+                    <div className="cardReview" >
+                        <div className="reviewsList">{reviewsList[5]}</div>
+                    </div>
+                    <div className="cardReview" >
+                        <div className="reviewsList">{reviewsList[6]}</div>
+                    </div>
+                    <button type="button" onClick={this.deleteHandler}>Remove Review</button>
                 </div>
             </div>
         )
     }
 }
 
-// <div> 
-// <NavLink className="button" to="/leavereview">Leave a Review</NavLink>
-// </div>

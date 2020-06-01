@@ -48,7 +48,6 @@ function App() {
           </Switch>
         </div>
       </Router>
-      <Cart />
     </header>
    
     

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import Sleekbeer from '../assets/Sleekbeer.jpg'
 import AddMetals from './AddMetals'
-import Cart from './Cart'
+
 
 
 export default class MetalsList extends Component {

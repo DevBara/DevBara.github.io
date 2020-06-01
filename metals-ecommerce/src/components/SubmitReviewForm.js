@@ -9,13 +9,15 @@ export default class SubmitReviewForm extends Component {
 
         this.state={
             comments: '',
-            rating: ''
+            rating: '',
+            id: 0
         }
     }
 
     changeHandler = e => {
         this.setState({[e.target.name]: e.target.value})
     }
+    
 
     submitHandler = e => {
         window.alert('Review has been submitted')
@@ -31,18 +33,11 @@ export default class SubmitReviewForm extends Component {
         
     }
 
- deleteHandler = e => {
-     window.alert('Review has been deleted')
+    
 
-     axios.delete('metals_api/v1/reviews',
-        this.state)
-        .then(response => {
-            console.log(response)
-        })
-        .catch(error => {
-            console.log(error)
-        })
- }
+
+
+
     
     render() {
 
@@ -59,7 +54,7 @@ export default class SubmitReviewForm extends Component {
                             <option value="1">1 star</option>
                             <option value="2">2 stars</option>
                             <option value="3">3 stars</option>
-                            <option value="4">4 stars</option>
+                            <option value="4">4stars</option>
                         </select>
                     </div>
                     <textarea
@@ -71,10 +66,6 @@ export default class SubmitReviewForm extends Component {
                     >
                     </textarea>
                     <Button type="submit">Submit Review</Button>
-                    <div onSubmit={this.deleteHandler}>
-                        <button type="button" onChange={this.changeHandler}>Remove Review</button>
-                    </div>
-                    
                 </form>
             </div>
         )
