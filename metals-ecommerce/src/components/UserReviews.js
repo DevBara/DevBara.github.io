@@ -41,19 +41,33 @@ export default class UserReviews extends Component {
         });
         
         return (
-            <div>
-                <h1 className="reviewsTitle"> Dont take our word for it, see what others have to say!</h1>
-                <h2 className="reviewsSubTitle">Customer Reviews</h2>
-                <div className="reviewsList">{reviewsList}</div>
-                <br />
-                <br />
-                <br />
-                
-                <div> 
-                    <NavLink className="button" to="/leavereview">Leave a Review</NavLink>
+            <div className="reviewContainer">
+                <div className="cardReview" id="reviewsList" >
+                    <div className="reviewsList">{reviewsList[0]}</div>
+                </div>
+                <div className="cardReview" >
+                    <div className="reviewsList">{reviewsList[1]}</div>
+                </div>
+                <div className="cardReview" >
+                    <div className="reviewsList">{reviewsList[2]}</div>
+                </div>
+                <div className="cardReview" >
+                    <div className="reviewsList">{reviewsList[3]}</div>
+                </div>
+                <div className="cardReview" >
+                    <div className="reviewsList">{reviewsList[4]}</div>
+                </div>
+                <div className="cardReview" >
+                    <div className="reviewsList">{reviewsList[5]}</div>
+                </div>
+                <div className="cardReview" >
+                    <div className="reviewsList">{reviewsList[6]}</div>
                 </div>
             </div>
         )
     }
 }
 
+// <div> 
+// <NavLink className="button" to="/leavereview">Leave a Review</NavLink>
+// </div>

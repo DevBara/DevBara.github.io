@@ -152,3 +152,49 @@ h3 {
 .topTitle{
   text-align: center;
 }
+
+/* End Home Page Top Picks */
+
+/* Review Styling */
+
+.reviewContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-between;
+  
+
+}
+
+.cardReview{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 600px;
+  text-align: center;
+  font-family: arial;
+
+}
+
+
+
+/* News Styling */
+.cardNews{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width:1050px;
+  margin:auto;
+  text-align: center;
+  font-family: arial;
+  
+}
+
+.row{
+  display: inline-block;
+  padding: 10px;
+  margin: auto;
+}
+
+.newsTitle{
+  font-size: 25px;
+  background-color:  rgba(150, 213, 238, 0.349)
+}
+
+/* End News Styling */
