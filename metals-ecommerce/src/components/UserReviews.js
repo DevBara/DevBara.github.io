@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
 import {NavLink} from 'react-router-dom'
+import {Button}from 'react-bootstrap'
 import axios from 'axios'
 
 
 export default class UserReviews extends Component {
+
+    emptyComment = {
+        comments: '',
+        ratings: [],
+        reviews: []
+      };
+
     constructor(props){
         super(props);
 
@@ -11,8 +19,13 @@ export default class UserReviews extends Component {
             comments: '',
             ratings:[],
             reviews:[],
-            id: 0
+            item: this.emptyComment,
+            id: this.props.match.params.id
+            
         }
+
+        this.removeComments = this.removeComments.bind(this);
+        
     }
 
     componentDidMount(){
@@ -27,29 +40,18 @@ export default class UserReviews extends Component {
             }))
 
         }
-handleChange= event => {
-    this.setState({comments: event.target.value})
-}
-    
-handleSubmit =event =>{
-    event.preventDefault();
-
-    const reviews ={
-        comments:this.state.comments
-    }
-
-    axios
-        .delete(`http://localhost:8090/metals_api/v1/reviews/${this.state.id}`,{reviews})
-        .then(response => {
-            console.log(response);
-            console.log(response.data)
-
-        })
-        
-}
 
 
- 
+        async removeComments(id) {
+            axios.delete(`metals_api/v1/reviews/16`) 
+            .then(function (response) {
+              console.log(response);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        }
+
 
     render() {
         const {reviews} = this.state;
@@ -89,7 +91,7 @@ handleSubmit =event =>{
                     <div className="cardReview" >
                         <div className="reviewsList">{reviewsList[6]}</div>
                     </div>
-                    <button type="button" onClick={this.deleteHandler}>Remove Review</button>
+                    <Button onClick={() => this.removeComments(reviews.id)}></Button>
                 </div>
             </div>
         )
