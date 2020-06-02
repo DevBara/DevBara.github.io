@@ -21,4 +21,5 @@ A README.md file with explanations of the technologies used, the approach taken,
  * APIs with JSON data in an object(NO ARRAY), would not render on screen.  
     - Object.values?
     - Turn object into an Array?
+* Completing admin page, technically users would not be allowed to add,edit,delete data
 
