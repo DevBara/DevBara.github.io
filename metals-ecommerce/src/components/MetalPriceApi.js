@@ -12,15 +12,15 @@ export default class MetalPriceApi extends Component {
     }
 
 
-    componentDidMount(){
-        axios.get('https://gold-price-live.p.rapidapi.com/get_metal_prices')
-        .then(res => {
-            this.setState({
-                ratesList:res.data.rates
-            });
+    // componentDidMount(){
+    //     axios.get('https://gold-price-live.p.rapidapi.com/get_metal_prices')
+    //     .then(res => {
+    //         this.setState({
+    //             ratesList:res.data.rates
+    //         });
             
-        });
-    }
+    //     });
+    // }
 
     render() {
         

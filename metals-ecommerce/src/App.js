@@ -9,6 +9,8 @@ import SubmitReviewForm from './components/SubmitReviewForm';
 import Cart from './components/Cart';
 import MetalPriceApi from './components/MetalPriceApi';
 import News from './components/News';
+import StockAPI from './components/StockAPI';
+// import Footer from './components/Footer'
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
     <div className="App">
     <header className="Header">
     <MetalPriceApi />
+    <StockAPI />
     <Header />
       <Router>
         <div>
@@ -48,6 +51,7 @@ function App() {
           </Switch>
         </div>
       </Router>
+      {/* <Footer /> */}
     </header>
    
     

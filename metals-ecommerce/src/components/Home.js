@@ -34,6 +34,7 @@ export default function Home() {
             <div className="slides">
               <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
                 <span>Precious Metals is only a click away</span>
+
               </div>
             </div>
             <div className="slides">

@@ -2,6 +2,12 @@ A README.md file with explanations of the technologies used, the approach taken,
 
 ## This site was built for users to purchase precious metals. Gold & silver is not out of reach with PM Exchange!
 
+## APIs Used
+* News API
+* GoldBroker
+* SpringBoot API
+*
+
 ## Installation/Installs:
 * Bootstrap/React-Strap
 * react-router-dom

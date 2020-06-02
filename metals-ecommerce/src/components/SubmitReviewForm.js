@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Button}from 'react-bootstrap'
 import axios from 'axios'
+import Feedback from '../assets/feedback.png'
 
  
 export default class SubmitReviewForm extends Component {
@@ -33,10 +34,6 @@ export default class SubmitReviewForm extends Component {
         
     }
 
-    
-
-
-
 
     
     render() {
@@ -44,11 +41,10 @@ export default class SubmitReviewForm extends Component {
         const{comments, rating} = this.state
 
         return (
-        <div>
+        <div class="imageReview">
                 <form onSubmit={this.submitHandler}> 
                     <div>
                         <label for="rating">Select Rating</label>
-
                         <select name="rating" onChange={this.changeHandler} value={rating}>
                         <option value="0">-</option>
                             <option value="1">1 star</option>

@@ -1,16 +1,12 @@
 import React, { Component } from 'react'
 import {NavLink} from 'react-router-dom'
-import {Button}from 'react-bootstrap'
 import axios from 'axios'
+import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
+
 
 
 export default class UserReviews extends Component {
-
-    emptyComment = {
-        comments: '',
-        ratings: [],
-        reviews: []
-      };
+    
 
     constructor(props){
         super(props);
@@ -19,13 +15,9 @@ export default class UserReviews extends Component {
             comments: '',
             ratings:[],
             reviews:[],
-            item: this.emptyComment,
-            id: this.props.match.params.id
-            
         }
 
         this.removeComments = this.removeComments.bind(this);
-        
     }
 
     componentDidMount(){
@@ -41,9 +33,28 @@ export default class UserReviews extends Component {
 
         }
 
+        handleChange(event) {
+            const target = event.target;
+            const value = target.value;
+            const name = target.name;
+            let item = {...this.state.item};
+            item[name] = value;
+            this.setState({item});
+          }
+
 
         async removeComments(id) {
-            axios.delete(`metals_api/v1/reviews/16`) 
+            axios.delete(`metals_api/v1/reviews/${id}`) 
+            .then(function (response) {
+              console.log(response);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        }
+
+        async editComments(id) {
+            axios.put(`/metals_api/v1/reviews/${id}`) 
             .then(function (response) {
               console.log(response);
             })
@@ -53,8 +64,12 @@ export default class UserReviews extends Component {
         }
 
 
+      
+
+
     render() {
         const {reviews} = this.state;
+        const {item} = this.state;
 
         const reviewsList=reviews.map(reviews => {
             return <div key={reviews.id}>
@@ -65,13 +80,14 @@ export default class UserReviews extends Component {
         });
         
         return (
-            <div>
-                <div> 
-                    <NavLink className="button" to="/leavereview">Leave a Review</NavLink>
+            <div className="reviewWrapper" onChange={this.handleChange}>
+                <div className="leaveButton"> 
+                    <NavLink to="/leavereview">Leave a Review</NavLink>
                 </div>
                 <div className="reviewContainer">
                     <div className="cardReview" id="reviewsList" >
                         <div className="reviewsList">{reviewsList[0]}</div>
+                        <button onClick={this.editComments}>Edit</button>
                     </div>
                     <div className="cardReview" >
                         <div className="reviewsList">{reviewsList[1]}</div>
@@ -91,7 +107,6 @@ export default class UserReviews extends Component {
                     <div className="cardReview" >
                         <div className="reviewsList">{reviewsList[6]}</div>
                     </div>
-                    <Button onClick={() => this.removeComments(reviews.id)}></Button>
                 </div>
             </div>
         )

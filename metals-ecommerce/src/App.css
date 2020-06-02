@@ -9,10 +9,10 @@
 
   }
   .headerTitle{
-    margin: 0px; 
+    margin: 0 auto;
   }
   .headerSubTitle{
-    margin: 0px;
+    margin: 0 auto;
     padding: 0px;
   }
 
@@ -27,7 +27,7 @@
     background-color: rgba(211, 211, 211, 0.521);
     font-size: 20px;
     padding: 0px;
-    margin: 0;
+    margin: 0 auto;
   }
 
   .siteLogo{
@@ -168,14 +168,6 @@ h3 {
 
 /* Review Styling */
 
-.reviewContainer{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-content: space-between;
-  
-
-}
 
 .cardReview{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -184,6 +176,16 @@ h3 {
   font-family: arial;
 
 }
+
+.leaveButton{
+  position: relative;
+  font-size: 20px;
+}
+
+.reviewContainer{
+
+}
+
 
 
 
