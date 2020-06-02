@@ -25,3 +25,6 @@
     - Turn object into an Array?
 * Completing admin page, technically users would not be allowed to add,edit,delete data
 
+## Deployed Link
+https://precious-metals-app.firebaseapp.com/home - automatic!
+[Firebase Deploy](https://precious-metals-app.firebaseapp.com/home)
