@@ -18,7 +18,7 @@ function App() {
     <div className="App">
     <header className="Header">
     <MetalPriceApi />
-    <StockAPI />
+    {/* <StockAPI /> */}
     <Header />
       <Router>
         <div>
