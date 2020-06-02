@@ -6,7 +6,7 @@ A README.md file with explanations of the technologies used, the approach taken,
 * News API
 * GoldBroker
 * SpringBoot API
-*
+* FinnHub(Stock Ticker)
 
 ## Installation/Installs:
 * Bootstrap/React-Strap
@@ -18,4 +18,7 @@ A README.md file with explanations of the technologies used, the approach taken,
  * HTTP Put Method works while using postman, but working on live site was a fail
  * HTTP Delete Method works if you input individual id number vs ${id}
  * When adding to cart, needed more time creating the cart component which would be a child to the Product Lists
+ * APIs with JSON data in an object(NO ARRAY), would not render on screen.  
+    - Object.values?
+    - Turn object into an Array?
 
