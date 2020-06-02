@@ -182,11 +182,14 @@ h3 {
   font-size: 20px;
 }
 
-.reviewContainer{
-
+.imageReview,textarea{
+  display: inline-block;
+  text-align: center;
 }
 
-
+.reviewForm{
+  text-align: center;
+}
 
 
 /* News Styling */
