@@ -34,6 +34,17 @@ export default class SubmitReviewForm extends Component {
         
     }
 
+    // changeRating(event){
+    //     rating: even.target.value
+
+    // }
+
+    // changeComment(event){
+    //     this.setState({
+    //         comments:event.target.value
+    //     })
+    // }
+
 
     
     render() {
