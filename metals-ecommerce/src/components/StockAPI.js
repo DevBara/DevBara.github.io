@@ -5,7 +5,8 @@ export default class StockAPI extends Component {
         super(props);
 
         this.state={
-            data: '',
+            data: [],
+            isLoading:true,
             name:'',
             ticker:'',
             marketCapitalization: ''
@@ -13,14 +14,19 @@ export default class StockAPI extends Component {
     }
 
     componentDidMount(){
-        fetch('https://finnhub.io/api/v1/stock/profile2?symbol=DOW&token=braskbvrh5rbo6o6t0c0')
-            .then(res => res.json())
-            .then(json => this.setState({
-                data:json
+        this.setState({
+            isLoading:true});
 
-                
+            fetch('https://finnhub.io/api/v1/stock/profile2?symbol=DOW&token=braskbvrh5rbo6o6t0c0')
+                .then(response => response.json())
+                .then(data => this.setState({
+                    data: data,
+                    isLoading:false,
+
             }))
-    }
+
+
+        }
 
 
     render() {
