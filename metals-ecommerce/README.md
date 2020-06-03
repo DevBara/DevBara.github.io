@@ -26,4 +26,7 @@
 * Completing admin page, technically users would not be allowed to add,edit,delete data
 
 ## Deployed Link
-[Firebase Deploy](https://precious-metals-app.firebaseapp.com/home)
+[Heroku Deploy](https://sheltered-hamlet-68970.herokuapp.com/)
+
+upon deploy, News API ceased to work. However local database is now rendering, previously NEWS was working. Still working on kinks,
+deployment messed something up
